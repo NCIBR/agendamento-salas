@@ -1,52 +1,52 @@
 from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-import os
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 
-# Configuração do banco: usa DATABASE_URL do Render ou fallback para SQLite local
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///local.db')
+# Configuração do banco: substitua pelos seus dados
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://db_agendamento_user:wY2gHIU4WEMv3wBoVYRTYAJ8snuIrQBI@dpg-d14ppmmuk2gs73cgn1i0-a/db_agendamento'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Modelo do agendamento
-class Agendamento(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(100), nullable=False)
-    sala = db.Column(db.String(50), nullable=False)
-    data = db.Column(db.String(10), nullable=False)           # YYYY-MM-DD
-    hora_inicial = db.Column(db.String(5), nullable=False)    # HH:MM
-    hora_final = db.Column(db.String(5), nullable=False)      # HH:MM
+from models import Agendamento
 
-# Rota para criar agendamento
 @app.route('/agendamentos', methods=['POST'])
 def criar_agendamento():
     data = request.get_json()
-    try:
-        agendamento = Agendamento(
-            nome=data['nome'],
-            sala=data['sala'],
-            data=data['data'],
-            hora_inicial=data['hora_inicial'],
-            hora_final=data['hora_final']
-        )
-        db.session.add(agendamento)
-        db.session.commit()
-        return jsonify({'message': 'Agendamento criado com sucesso!'}), 201
-    except Exception as e:
-        print(f"Erro ao criar agendamento: {e}")
-        return jsonify({'error': 'Erro ao criar agendamento.'}), 500
+    nome = data['nome']
+    sala = data['sala']
+    data_agendamento = data['data']
+    hora_inicial = data['hora_inicial']
+    hora_final = data['hora_final']
 
-# Opcional: rota para listar todos os agendamentos (útil para testes)
+    # Verifica conflito
+    conflitos = Agendamento.query.filter_by(data=data_agendamento, sala=sala).all()
+    for ag in conflitos:
+        if not (hora_final <= ag.hora_inicial or hora_inicial >= ag.hora_final):
+            return jsonify({'erro': 'Conflito: sala já agendada nesse horário'}), 400
+
+    novo = Agendamento(
+        nome=nome,
+        sala=sala,
+        data=data_agendamento,
+        hora_inicial=hora_inicial,
+        hora_final=hora_final
+    )
+    db.session.add(novo)
+    db.session.commit()
+
+    return jsonify({'mensagem': 'Agendamento criado com sucesso'})
+
 @app.route('/agendamentos', methods=['GET'])
 def listar_agendamentos():
     agendamentos = Agendamento.query.all()
-    resultado = []
+    lista = []
     for ag in agendamentos:
-        resultado.append({
+        lista.append({
             'id': ag.id,
             'nome': ag.nome,
             'sala': ag.sala,
@@ -54,9 +54,7 @@ def listar_agendamentos():
             'hora_inicial': ag.hora_inicial,
             'hora_final': ag.hora_final
         })
-    return jsonify(resultado)
+    return jsonify(lista)
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # Cria as tabelas no banco
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)

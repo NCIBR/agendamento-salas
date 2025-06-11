@@ -3,7 +3,7 @@ import api from '../services/api';
 
 function Agendar() {
   const [nome, setNome] = useState('');
-  const [sala, setSala] = useState('Sala de reunião 1'); // Valor padrão
+  const [sala, setSala] = useState('');
   const [data, setData] = useState('');
   const [horaInicial, setHoraInicial] = useState('');
   const [horaFinal, setHoraFinal] = useState('');
@@ -28,7 +28,7 @@ function Agendar() {
 
       setMensagem('Agendamento realizado com sucesso!');
       setNome('');
-      setSala('Sala de reunião 1');
+      setSala('');
       setData('');
       setHoraInicial('');
       setHoraFinal('');
@@ -49,8 +49,9 @@ function Agendar() {
         <div>
           <label>Sala:</label><br />
           <select value={sala} onChange={e => setSala(e.target.value)} required>
-            <option value="Sala de reunião 1">Sala de reunião 1</option>
-            <option value="Sala de reunião 2">Sala de reunião 2</option>
+            <option value="">Selecione uma sala</option>
+            <option value="Sala de Reunião 1">Sala de Reunião 1</option>
+            <option value="Sala de Reunião 2">Sala de Reunião 2</option>
             <option value="Recepção">Recepção</option>
           </select>
         </div>
