@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://agendamento-salas-1.onrender.com',  // substitua pela URL do Render
+  baseURL: 'https://agendamento-salas-2.onrender.com'  // sua URL pública do Render
 });
 
 export default api;

@@ -1,12 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
   return (
-    <div>
-      <h1>Bem-vindo ao Sistema de Agendamento de Salas</h1>
-      <p>Use o menu acima para agendar ou visualizar agendamentos.</p>
+    <div className="home-container">
+      <h1>Bem-vindo ao Sistema de Agendamento de Salas da NCI</h1>
+      <p>
+        Use o menu ou o botão abaixo para acessar a área de agendamentos.
+      </p>
+      <Link to="/agendamentos" className="home-button">
+        Ver Agendamentos
+      </Link>
     </div>
   );
 }
 
-export default Home;
+
+export default Home;
