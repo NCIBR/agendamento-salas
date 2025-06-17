@@ -1,0 +1,57 @@
+.form-agendamento {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.form-agendamento h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-agendamento label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.form-agendamento input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-agendamento button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-agendamento button:hover {
+  background-color: #218838;
+}
+
+.erro {
+  color: #d9534f;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.sucesso {
+  color: #28a745;
+  margin-top: 10px;
+  text-align: center;
+}
