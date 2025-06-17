@@ -45,13 +45,13 @@
 }
 
 .erro {
-  color: #d9534f;
+  color: #ed150e;
   margin-top: 10px;
   text-align: center;
 }
 
 .sucesso {
-  color: #28a745;
+  color: #048823;
   margin-top: 10px;
   text-align: center;
 }
