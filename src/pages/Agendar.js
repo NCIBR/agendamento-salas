@@ -9,11 +9,12 @@ function Agendar() {
   const [data, setData] = useState('');
   const [horaInicial, setHoraInicial] = useState('');
   const [horaFinal, setHoraFinal] = useState('');
+  const [motivo, setMotivo] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [erro, setErro] = useState('');
 
   const validarFormulario = () => {
-    if (!nome || !data || !horaInicial || !horaFinal) {
+    if (!nome || !data || !horaInicial || !horaFinal || !motivo) {
       setErro('Por favor, preencha todos os campos.');
       return false;
     }
@@ -37,7 +38,8 @@ function Agendar() {
         sala,
         data,
         hora_inicial: horaInicial,
-        hora_final: horaFinal
+        hora_final: horaFinal,
+        motivo  // Enviando o motivo junto
       });
       setMensagem(res.data.mensagem);
       setNome('');
@@ -45,6 +47,7 @@ function Agendar() {
       setData('');
       setHoraInicial('');
       setHoraFinal('');
+      setMotivo('');
     } catch (error) {
       setErro(error.response?.data?.erro || 'Erro ao agendar');
     }
@@ -145,6 +148,14 @@ function Agendar() {
           type="time"
           value={horaFinal}
           onChange={e => setHoraFinal(e.target.value)}
+          required
+        />
+
+        <label style={labelStyle}>Motivo da Reunião:</label>
+        <textarea
+          style={{ ...inputStyle, height: '80px', resize: 'vertical' }}
+          value={motivo}
+          onChange={e => setMotivo(e.target.value)}
           required
         />
 

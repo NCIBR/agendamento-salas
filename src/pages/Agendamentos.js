@@ -18,11 +18,17 @@ function Agendamentos() {
     fetchAgendamentos();
   }, []);
 
+  // Função para formatar data de YYYY-MM-DD para DD/MM/YYYY
+  const formatarData = (dataStr) => {
+    const [ano, mes, dia] = dataStr.split('-');
+    return `${dia}/${mes}/${ano}`;
+  };
+
   // Filtrar agendamentos localmente
   const agendamentosFiltrados = agendamentos.filter(ag => {
     return (
       (filtroData === '' || ag.data === filtroData) &&
-      (filtroSala === '' || ag.sala.toLowerCase().includes(filtroSala.toLowerCase()))
+      (filtroSala === '' || ag.sala === filtroSala)
     );
   });
 
@@ -42,12 +48,15 @@ function Agendamentos() {
 
         <label>
           Filtrar por sala: 
-          <input 
-            type="text" 
-            placeholder="Digite a sala" 
+          <select 
             value={filtroSala} 
-            onChange={e => setFiltroSala(e.target.value)} 
-          />
+            onChange={e => setFiltroSala(e.target.value)}
+          >
+            <option value="">Todas</option>
+            <option value="Sala de reunião 1">Sala de reunião 1</option>
+            <option value="Sala de reunião 2">Sala de reunião 2</option>
+            <option value="Recepção">Recepção</option>
+          </select>
         </label>
       </div>
 
@@ -59,8 +68,9 @@ function Agendamentos() {
             <div key={ag.id} className="card-agendamento">
               <h3>{ag.nome}</h3>
               <p><strong>Sala:</strong> {ag.sala}</p>
-              <p><strong>Data:</strong> {ag.data}</p>
+              <p><strong>Data:</strong> {formatarData(ag.data)}</p>
               <p><strong>Horário:</strong> {ag.hora_inicial} - {ag.hora_final}</p>
+              <p><strong>Motivo da Reunião:</strong> {ag.motivo}</p>
             </div>
           ))}
         </div>
@@ -70,4 +80,3 @@ function Agendamentos() {
 }
 
 export default Agendamentos;
-

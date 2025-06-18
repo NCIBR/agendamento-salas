@@ -1,20 +1,43 @@
 .home-container {
   text-align: center;
   padding: 40px;
+  min-height: 100vh;
+
+  background-image: url('C:\Users\Public\Pictures\image.jpg'); /* Caminho relativo à pasta public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: rgb(3, 3, 3); /* ou preto, dependendo da imagem de fundo */
+}
+.botoes-home {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: center;  /* Centraliza os botões horizontalmente */
+  align-items: center;      /* Alinha verticalmente no centro (opcional) */
 }
 
+
+
 .home-button {
-  display: inline-block;
-  margin-top: 20px;
   padding: 12px 24px;
-  background-color: #007bff;
+  background-color: #0055cc;
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .home-button:hover {
-  background-color: #0056b3;
+  background-color: #003d99;
+}
+
+.agendar-button {
+  background-color: #28a745; 
+}
+
+.agendar-button:hover {
+  background-color: #1e7e34;
 }
