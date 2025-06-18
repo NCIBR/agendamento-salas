@@ -2,9 +2,9 @@
   max-width: 400px;
   margin: 20px auto;
   padding: 15px;
-  background: #f7f7f7;
+  background: #dddbdb;
   border-radius: 8px;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ffffff;
 }
 
 .form-agendamento h2 {
@@ -45,7 +45,7 @@
 }
 
 .erro {
-  color: #ed150e;
+  color: #f70800;
   margin-top: 10px;
   text-align: center;
 }

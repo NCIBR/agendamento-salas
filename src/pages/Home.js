@@ -5,7 +5,13 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      <h1>Bem-vindo ao Sistema de Agendamento de Salas da NCI</h1>
+      <div className="nome-criacao">Criado por: Ana Kobayashi</div> {/* Novo elemento */}
+
+      <h1>
+        Bem-vindo ao Sistema de Agendamento de Salas da 
+        <p></p>
+        Nippon Carbide
+      </h1>
       <p>
         Use o menu ou os botões abaixo para acessar a área de agendamentos.
       </p>

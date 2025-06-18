@@ -1,24 +1,37 @@
 .home-container {
+  position: relative; /* já existe seu padding, min-height e fundo */
   text-align: center;
   padding: 40px;
   min-height: 100vh;
 
-  background-image: url('C:\Users\Public\Pictures\image.jpg'); /* Caminho relativo à pasta public */
+  background-image: url('C:\Users\ana.kobayashi\Videos\backend\frontend-salas\public\image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  color: rgb(3, 3, 3); /* ou preto, dependendo da imagem de fundo */
+  color: rgb(3, 3, 3);
 }
+
+/* Novo estilo para o nome da criação */
+.nome-criacao {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: white; /* branco para destacar sobre a imagem de fundo */
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* sombra para melhor leitura */
+}
+
+/* Seus estilos já existentes continuam aqui */
 .botoes-home {
   display: flex;
   gap: 16px;
   margin-top: 20px;
-  justify-content: center;  /* Centraliza os botões horizontalmente */
-  align-items: center;      /* Alinha verticalmente no centro (opcional) */
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 .home-button {
   padding: 12px 24px;
@@ -35,7 +48,7 @@
 }
 
 .agendar-button {
-  background-color: #28a745; 
+  background-color: #1fa33e;
 }
 
 .agendar-button:hover {

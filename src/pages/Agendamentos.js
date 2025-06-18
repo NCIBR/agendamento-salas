@@ -70,7 +70,7 @@ function Agendamentos() {
               <p><strong>Sala:</strong> {ag.sala}</p>
               <p><strong>Data:</strong> {formatarData(ag.data)}</p>
               <p><strong>Horário:</strong> {ag.hora_inicial} - {ag.hora_final}</p>
-              <p><strong>Motivo da Reunião:</strong> {ag.motivo}</p>
+              <p><strong>Motivo:</strong> {ag.motivo}</p>
             </div>
           ))}
         </div>
