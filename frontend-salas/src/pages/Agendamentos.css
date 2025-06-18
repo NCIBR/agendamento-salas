@@ -9,7 +9,7 @@
 h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #2c3e50;
+  color: #000000;
 }
 
 .filtros {
@@ -24,7 +24,7 @@ h2 {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  color: #34495e;
+  color: #050505;
 }
 
 .filtros input,
