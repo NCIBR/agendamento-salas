@@ -7,14 +7,19 @@ function Home() {
     <div className="home-container">
       <h1>Bem-vindo ao Sistema de Agendamento de Salas da NCI</h1>
       <p>
-        Use o menu ou o botão abaixo para acessar a área de agendamentos.
+        Use o menu ou os botões abaixo para acessar a área de agendamentos.
       </p>
-      <Link to="/agendamentos" className="home-button">
-        Ver Agendamentos
-      </Link>
+
+      <div className="botoes-home">
+        <Link to="/agendamentos" className="home-button">
+          Ver Agendamentos
+        </Link>
+        <Link to="/agendar" className="home-button agendar-button">
+          Agendar sala
+        </Link>
+      </div>
     </div>
   );
 }
 
-
-export default Home;
+export default Home;
