@@ -4,11 +4,7 @@
   padding: 40px;
   min-height: 100vh;
 
-  background-image: url('frontend-salas/public/image.jpg');
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
   color: rgb(3, 3, 3);
 }
