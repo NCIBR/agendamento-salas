@@ -5,7 +5,7 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      <div className="nome-criacao">Criado por: Ana Kobayashi</div> {/* Novo elemento */}
+      <div className="nome-criacao">Desenvolvido por: Ana Kobayashi</div> {/* Novo elemento */}
 
       <h1>
         Bem-vindo ao Sistema de Agendamento de Salas da 
