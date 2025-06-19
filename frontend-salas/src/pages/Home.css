@@ -1,19 +1,22 @@
 .home-container {
   position: relative;
   text-align: center;
-  padding: 20px;
-  height: 100vh; /* Ocupa exatamente a altura da tela */
-  overflow: hidden; /* Evita scroll vertical */
+  padding: 40px;
+  min-height: 100vh;
 
-  background-image: url('https://i.imgur.com/9n6gIch.jpeg');
+background-image: url('https://i.imgur.com/9n6gIch.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  min-height: 100vh;
+  padding: 40px;
   color: rgb(3, 3, 3);
+  text-align: center;
+  position: relative;
 }
 
-/* Nome no canto superior direito */
+
+/* Novo estilo para o nome da criação */
 .nome-criacao {
   position: absolute;
   top: 10px;
@@ -25,7 +28,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* Botões da página inicial */
+/* Seus estilos já existentes continuam aqui */
 .botoes-home {
   display: flex;
   gap: 16px;
