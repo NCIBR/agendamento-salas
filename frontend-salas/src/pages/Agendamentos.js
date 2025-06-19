@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // 👈 Importa o Link aqui
 import api from '../services/api';
 import './Agendamentos.css';
 
@@ -18,13 +19,11 @@ function Agendamentos() {
     fetchAgendamentos();
   }, []);
 
-  // Função para formatar data de YYYY-MM-DD para DD/MM/YYYY
   const formatarData = (dataStr) => {
     const [ano, mes, dia] = dataStr.split('-');
     return `${dia}/${mes}/${ano}`;
   };
 
-  // Filtrar agendamentos localmente
   const agendamentosFiltrados = agendamentos.filter(ag => {
     return (
       (filtroData === '' || ag.data === filtroData) &&
@@ -34,6 +33,9 @@ function Agendamentos() {
 
   return (
     <div className="agendamentos-container">
+      {/* Botão de Voltar */}
+      <Link to="/" className="botao-voltar">← Voltar</Link>
+
       <h2>Agendamentos Registrados</h2>
 
       <div className="filtros">
