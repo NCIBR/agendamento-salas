@@ -1,33 +1,64 @@
+/* Estilo geral da aplicação */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+.App-header {
+  background: linear-gradient(to right, #0055cc, #003d99);
+  padding: 60px 20px;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
+/* Logo com animação */
+.App-logo {
+  height: 100px;
+  margin-bottom: 20px;
+  animation: App-logo-spin 20s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.App-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Links com estilo moderno */
 .App-link {
-  color: #61dafb;
+  color: #ffffff;
+  background-color: #61dafb;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
+.App-link:hover {
+  background-color: #21a1f1;
+}
+
+/* Responsivo: reduz tamanho da logo em telas pequenas */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 70px;
+  }
+
+  .App-header {
+    padding: 40px 10px;
+  }
+}
+
+/* Animação do logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
