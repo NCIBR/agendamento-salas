@@ -98,6 +98,17 @@ function Agendar() {
     fontSize: '16px',
   };
 
+  const voltarButtonStyle = {
+    marginBottom: '15px',
+    backgroundColor: '#6c757d',
+    border: 'none',
+    color: 'white',
+    padding: '8px 12px',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    fontSize: '14px',
+  };
+
   const errorStyle = {
     color: 'red',
     marginBottom: '10px',
@@ -115,6 +126,13 @@ function Agendar() {
   return (
     <div style={containerStyle}>
       <div style={formStyle}>
+        <button
+          style={voltarButtonStyle}
+          onClick={() => window.history.back()}
+          type="button"
+        >
+          ← Voltar
+        </button>
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Agendar Sala</h2>
         {erro && <div style={errorStyle}>{erro}</div>}
         <form onSubmit={handleSubmit}>
