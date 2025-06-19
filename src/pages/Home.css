@@ -1,11 +1,10 @@
 .home-container {
-  position: relative; /* já existe seu padding, min-height e fundo */
+  position: relative;
   text-align: center;
   padding: 40px;
   min-height: 100vh;
 
-  background-image: url('/image.jpg');
-
+  background-image: url('/image.jpg'); /* Caminho relativo à pasta public */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,10 +18,10 @@
   top: 10px;
   right: 10px;
   font-size: 14px;
-  color: white; /* branco para destacar sobre a imagem de fundo */
+  color: white;
   font-weight: 600;
   font-family: Arial, sans-serif;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* sombra para melhor leitura */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 /* Seus estilos já existentes continuam aqui */
