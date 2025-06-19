@@ -4,13 +4,17 @@
   padding: 40px;
   min-height: 100vh;
 
-  background-image: url('logo.jpg'); /* Caminho relativo à pasta public */
+background-image: url('https://i.imgur.com/pD0Q5B1.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  min-height: 100vh;
+  padding: 40px;
   color: rgb(3, 3, 3);
+  text-align: center;
+  position: relative;
 }
+
 
 /* Novo estilo para o nome da criação */
 .nome-criacao {
