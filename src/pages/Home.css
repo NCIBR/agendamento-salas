@@ -1,19 +1,9 @@
-/* Aplica o reset para todos os elementos */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .home-container {
-  height: 100vh;
-  width: 100%;
+  position: relative;
+  text-align: center;
   padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100vh; /* Ocupa exatamente a altura da tela */
+  overflow: hidden; /* Evita scroll vertical */
 
   background-image: url('https://i.imgur.com/9n6gIch.jpeg');
   background-size: cover;
@@ -21,12 +11,9 @@
   background-repeat: no-repeat;
 
   color: rgb(3, 3, 3);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* Nome da criadora no canto superior direito */
+/* Nome no canto superior direito */
 .nome-criacao {
   position: absolute;
   top: 10px;
@@ -38,13 +25,13 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* Botões na tela */
+/* Botões da página inicial */
 .botoes-home {
   display: flex;
   gap: 16px;
   margin-top: 20px;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .home-button {
@@ -55,7 +42,6 @@
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  transition: background-color 0.3s;
 }
 
 .home-button:hover {
